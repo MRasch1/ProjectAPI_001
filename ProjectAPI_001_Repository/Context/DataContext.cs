@@ -20,5 +20,7 @@ namespace ProjectAPI_001_Repository.Context
         public DbSet<Samurai> Samurai { get; set; }
 
         public DbSet<Ninja> Ninja { get; set; }
+
+        public DbSet<Warrior> Warrior { get; set; }
     }
 }
