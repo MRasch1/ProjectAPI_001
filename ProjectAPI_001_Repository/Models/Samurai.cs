@@ -14,6 +14,7 @@ namespace ProjectAPI_001_Repository.Models
     /// 5) go to console => add-migration name
     /// 6) go to console => database-update
     /// 7) done
+    /// If the F.. S.. N
     /// </summary>
     public class Samurai
     {
