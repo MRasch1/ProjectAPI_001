@@ -22,7 +22,7 @@ namespace ProjectAPI_001_Repository.Models
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Descripton { get; set; }
+        public string Description { get; set; }
         public int Age { get; set; }
     }
 }
