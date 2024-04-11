@@ -11,5 +11,7 @@ namespace ProjectAPI_001_Repository.Interfaces
     {
         Samurai Create(Samurai samurai);
         List<Samurai> GetAll();
+        Samurai GetById(int id);
+        Samurai UpdateById(int id, Samurai updatedSamurai);
     }
 }

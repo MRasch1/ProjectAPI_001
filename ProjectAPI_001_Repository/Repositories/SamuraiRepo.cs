@@ -29,5 +29,26 @@ namespace ProjectAPI_001_Repository.Repositories
         {
             return context.Samurai.ToList();
         }
+
+        public Samurai GetById(int id) 
+        {
+            return context.Samurai.FirstOrDefault(s => s.Id == id);
+        }
+
+        public Samurai UpdateById(int id, Samurai updatedSamurai)
+        {
+            var samurai = context.Samurai.FirstOrDefault(s => s.Id == id);
+
+            if (samurai != null)
+            {
+                samurai.Name = updatedSamurai.Name;
+                samurai.Age = updatedSamurai.Age;
+                samurai.Description = updatedSamurai.Description;
+
+                context.SaveChanges();
+            }
+
+            return samurai;
+        }
     }
 }

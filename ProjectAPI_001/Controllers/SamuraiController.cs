@@ -26,7 +26,13 @@ namespace ProjectAPI_001.Controllers
             // If I want to DEBUG
             return repo.GetAll();
         }
-        
+
+        [HttpGet("{id}")]
+        public Samurai GetById(int id)
+        {
+            return repo.GetById(id);
+        }
+
 
         // Create: api/<SamuraiController>
         [HttpPost]
@@ -40,24 +46,29 @@ namespace ProjectAPI_001.Controllers
 
         }
 
-        
-
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // PUT api/<SamuraiController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public Samurai UpdateById(int id, Samurai updatedSamurai)
         {
+            return repo.UpdateById(id, updatedSamurai);
         }
 
-        // DELETE api/<SamuraiController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //[HttpPut("{id}")]
+        //public IActionResult Update(int id, Samurai samurai)
+        //{
+        //    var existingSamurai = repo.GetAll(id);
+        //    if (existingSamurai == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    existingSamurai.Name = samurai.Name;
+        //    existingSamurai.Description = samurai.Description;
+        //    existingSamurai.Age = samurai.Age;
+
+        //    repo.Update(existingSamurai);
+
+        //    return NoContent();
+        //}
+
     }
 }
