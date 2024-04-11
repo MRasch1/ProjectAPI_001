@@ -52,23 +52,11 @@ namespace ProjectAPI_001.Controllers
             return repo.UpdateById(id, updatedSamurai);
         }
 
-        //[HttpPut("{id}")]
-        //public IActionResult Update(int id, Samurai samurai)
-        //{
-        //    var existingSamurai = repo.GetAll(id);
-        //    if (existingSamurai == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    existingSamurai.Name = samurai.Name;
-        //    existingSamurai.Description = samurai.Description;
-        //    existingSamurai.Age = samurai.Age;
-
-        //    repo.Update(existingSamurai);
-
-        //    return NoContent();
-        //}
+        [HttpDelete("{id}")]
+        public Samurai DeleteById(int id)
+        {
+            return repo.DeleteById(id);
+        }
 
     }
 }

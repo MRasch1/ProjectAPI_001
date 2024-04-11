@@ -50,5 +50,17 @@ namespace ProjectAPI_001_Repository.Repositories
 
             return samurai;
         }
+
+       public Samurai DeleteById(int id)
+       {
+            var samurai = context.Samurai.FirstOrDefault(s => s.Id == id);
+
+            if(samurai != null)
+            {
+                context.Samurai.Remove(samurai);
+                context.SaveChanges();
+            }
+            return samurai;
+        }
     }
 }
